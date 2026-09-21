@@ -67,9 +67,7 @@ main ul{
         padding: 20px;
 }
 
-@media(max-width:600px){
-    nav{flex-direction: column;}
-}
+
 
 nav a{
     padding: 8px 12px;
@@ -83,4 +81,12 @@ a:hover{
 
 nav a:hover{
     background: rgba(255,255,255,0.15); border-radius: 4px;
+}
+
+.hidden { 
+    display: none;
+    
+}
+@media(max-width:600px){
+    nav{flex-direction: column;}
 }
