@@ -56,5 +56,22 @@ console.log(moreBtn, extra);
 
 moreBtn.addEventListener("click", function () {
     extra.classList.toggle("hidden");
-    moreBtn.textContent = extra.classList.contains("hidden") ? "Show more" : "Show less"; });
+    moreBtn.textContent = extr
+});
     
+const filterBtns = document.querySelectorAll(".filter button");
+const cards = document.querySelectorAll(".card");
+
+for (const btn of filterBtns) {
+    btn.addEventListener("click", function () {
+        const wanted = btn.dataset.class;
+        for (const card of cards) {
+            if (wanted === "all" || card.dataset.class === "all" || card.dataset.class === wanted) {
+                card.classList.remove("hidden");
+            }
+            else {
+                card.classList.add("hidden");
+            } 
+        }
+    });
+}
