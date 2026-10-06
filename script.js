@@ -4,7 +4,6 @@ let students = 12;
 students = students + 3;
 console.log(`${teacher} teaches ${students} students`);
 
-
 function grade(marks){
     if (marks >= 90) {
         return "A";
@@ -56,9 +55,24 @@ console.log(moreBtn, extra);
 
 moreBtn.addEventListener("click", function () {
     extra.classList.toggle("hidden");
-    moreBtn.textContent = extr
+    moreBtn.textContent = extra.classList.contains("hidden") ? "Show more" : "Show less";
 });
-    
+
+const notes = [
+    {class: 9, topic: "Number Systems", file:"#"},
+    {class: 10, topic: "Trigonometric Ratios", file:"notes/class10-trigonometric-ratios.pdf"}
+];    
+const list = document.querySelector("main ul");
+for (const note of notes) {
+    const li = document.createElement("li");
+    const a = document.createElement("a");  // new
+    a.textContent = note.topic;
+    a.href = note.file;
+    li.classList.add("card");
+    li.dataset.class = note.class;  //new 6-10-26
+    li.append(a);
+    list.append(li);
+}
 const filterBtns = document.querySelectorAll(".filter button");
 const cards = document.querySelectorAll(".card");
 
@@ -75,3 +89,14 @@ for (const btn of filterBtns) {
         }
     });
 }
+
+
+
+
+
+
+
+
+
+
+
